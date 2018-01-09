@@ -1,0 +1,100 @@
+
+- In .env configurare il metodo di brodcasting (redis)
+BROADCAST_DRIVER=redis
+
+- Aggiungere in config/app.php il service provider App\Providers\BroadcastServiceProvider
+
+
+- CSRF Token: inserire csrf token nel template
+<meta name="csrf-token" content="{{ csrf_token() }}">
+
+- Installare il pacchetto predis per utilizzare redis come brodcaster
+composer require predis/predis
+
+- Configurare un queue listener ?????
+
+- Creare le classi relative agli eventi da invocare es:
+    App\Events\ShippingStatusUpdated
+    - Il metodo brodcastOn restituisce il channel su cui verrà inviato il messaggio.
+        - Se il channel è privato verrà autorizzato mediante un'apposita route presente in
+          routes/channels.php
+
+    Le classe degli eventi possono essere create anche con
+    artisan make:event PostCreatedEvent
+
+- Per scatenare un'evento eseguire
+    event(new EventClass());
+
+- Installare laravel-echo-server
+sudo npm install -g laravel-echo-server
+
+- Inizializzazione laravel-echo-server nella directory del progetto
+cd ~/piDomotocHome
+laravel-echo-server init
+? Do you want to run this server in development mode? Yes
+? Which port would you like to serve from? 6001
+? Which database would you like to use to store presence channel members? redis
+? Enter the host of your Laravel authentication server. http://localhost
+? Will you be serving on http or https? http
+? Do you want to generate a client ID/Key for HTTP API? Yes
+? Do you want to setup cross domain access to the API? No
+appId: 21791b40b10f3c18
+key: 495b397e237700a3289e70e0f59b12b2
+Configuration file saved. Run laravel-echo-server start to run server.
+
+- Avviare laravel-echo-sever
+laravel-echo-server start
+
+- Creare il file resources/assets/js/app.js includendo la libreria js laravel-echo e inizializzando echo con
+socket.io come brodcaster:
+[code]
+require('./bootstrap');
+
+import Echo from 'laravel-echo'
+
+let e = new Echo({
+    brodcaster: 'socket-io',
+    host: window.location.hostname + ':6001'
+})
+[/code]
+
+- Modificare webpack.mix.js impostando mix.disableNotifications():
+[code]
+let mix = require('laravel-mix');
+
+mix.disableNotifications()
+
+mix.js('resources/assets/js/app.js', 'public/js')
+   .sass('resources/assets/sass/app.scss', 'public/css');
+[/code]
+
+- eseguire yarn nella home del progetto (su raspbian yarn non funziona, installarlo manualmente su ubuntu come
+riportato qui https://yarnpkg.com/en/docs/install ed eseguirlo da ubuntu tramite cartella montanta in nfs)
+cd ~/piDomoticHome
+yarn
+
+
+- aggiunge la libreria laravel-echo
+yarn add laravel-echo
+
+
+- compilare gli assets con npm (anche questo da ubuntu perchè su raspbian è presente una vecchia versione di node)
+npm run watch
+
+- Dall'applicazione js ascoltare gli eventi tramite codice tipo il seguente:
+
+    Echo.private(`order.${orderId}`)
+        .listen('ShippingStatusUpdated', (e) => {
+            console.log(e.update);
+        });
+
+    - Tutte le proprietà pubbliche della classe relativo all'evento (ShippingStatusUpdated)
+      verranno inviate all'evento
+
+
+
+
+- Installare la libreria js laravel-echo con npm
+npm install --save laravel-echo
+
+
