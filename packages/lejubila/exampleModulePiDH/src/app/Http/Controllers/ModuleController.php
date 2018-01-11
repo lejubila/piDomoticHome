@@ -27,6 +27,15 @@ class ModuleController extends Controller
         //$this->middleware('admin');
     }
 
+    public function getHome(Module $module)
+    {
+        $this->data['title'] = trans('pidomotichome::home.title') . ' - ' . $module->getNameModule();
+        $this->data['name_module'] = $module->getNameModule();
+
+        return view($module->getViewNamespace().'::public.home', $this->data);
+    }
+
+
     /**
      * Show the module dashboard.
      *

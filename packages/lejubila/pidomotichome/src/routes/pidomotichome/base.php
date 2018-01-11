@@ -46,7 +46,10 @@ Route::group(
         'middleware' => [ 'web' ],
     ],
     function () {
-        Route::get( '/', 'PublicController@getHome')
+        Route::get( '/', 'PublicController@getIndex')
+            ->name('pidomotichome.public.index');
+
+        Route::get( 'home', 'PublicController@getHome')
             ->name('pidomotichome.home');
     });
 

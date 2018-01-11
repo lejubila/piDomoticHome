@@ -21,6 +21,18 @@ All Notable changes to `Backpack CRUD` will be documented in this file
 
 -----------
 
+
+## [3.3.5] - 2018-01-10
+
+## Added
+- custom error message for AJAX datatable errors - merged #1100; 
+- 403 error on AccessDeniedException;
+
+### Fixed
+- CRUD alias is now loaded using package-autodiscovery instead of manually in CrudServiceProvider;
+- datatables ajax loading screen was askew when also using export buttons;
+
+
 ## [3.3.4] - 2017-12-19
 
 ## Fixed

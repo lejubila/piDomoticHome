@@ -6,7 +6,7 @@
         {{ trans('pidomotichome::home.title') }}<small></small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="{{ backpack_url() }}">{{ config('backpack.base.project_name') }}</a></li>
+        <li><a href="/">{{ config('backpack.base.project_name') }}</a></li>
         <li class="active">{{ trans('pidomotichome::home.title') }}</li>
       </ol>
     </section>

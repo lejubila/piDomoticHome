@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.5.28 on 2018-01-06.
+ * Generated for Laravel 5.5.28 on 2018-01-11.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -13475,6 +13475,14 @@ namespace Collective\Html {
  
 }
 
+namespace Backpack\CRUD { 
+
+    class CrudServiceProvider {
+         
+    }
+ 
+}
+
 namespace Prologue\Alerts\Facades { 
 
     class Alert {
@@ -13837,14 +13845,6 @@ namespace Creativeorange\Gravatar\Facades {
         {
             return \Creativeorange\Gravatar\Gravatar::get($email, $configGroup);
         }
-         
-    }
- 
-}
-
-namespace Backpack\CRUD { 
-
-    class CrudServiceProvider {
          
     }
  
@@ -15977,11 +15977,11 @@ namespace  {
 
     class Html extends \Collective\Html\HtmlFacade {}
 
+    class CRUD extends \Backpack\CRUD\CrudServiceProvider {}
+
     class Alert extends \Prologue\Alerts\Facades\Alert {}
 
     class Gravatar extends \Creativeorange\Gravatar\Facades\Gravatar {}
-
-    class CRUD extends \Backpack\CRUD\CrudServiceProvider {}
  
 }
 

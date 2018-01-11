@@ -465,6 +465,9 @@ class ComposerStaticInit42d4af2f3228e282ba59d765f75cd606
 
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
+        'App\\Events\\ExampleEvent' => __DIR__ . '/../..' . '/app/Events/ExampleEvent.php',
+        'App\\Events\\ExamplePrivateEvent' => __DIR__ . '/../..' . '/app/Events/ExamplePrivateEvent.php',
+        'App\\Events\\ShippingStatusUpdated' => __DIR__ . '/../..' . '/app/Events/ShippingStatusUpdated.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
@@ -2585,11 +2588,13 @@ class ComposerStaticInit42d4af2f3228e282ba59d765f75cd606
         'Lejubila\\PiDomoticHome\\app\\Http\\Controllers\\AdminController' => __DIR__ . '/../..' . '/packages/lejubila/pidomotichome/src/app/Http/Controllers/AdminController.php',
         'Lejubila\\PiDomoticHome\\app\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/packages/lejubila/pidomotichome/src/app/Http/Controllers/Controller.php',
         'Lejubila\\PiDomoticHome\\app\\Http\\Controllers\\PermissionCrudController' => __DIR__ . '/../..' . '/packages/lejubila/pidomotichome/src/app/Http/Controllers/PermissionCrudController.php',
+        'Lejubila\\PiDomoticHome\\app\\Http\\Controllers\\PublicController' => __DIR__ . '/../..' . '/packages/lejubila/pidomotichome/src/app/Http/Controllers/PublicController.php',
         'Lejubila\\PiDomoticHome\\app\\Http\\Controllers\\RoleCrudController' => __DIR__ . '/../..' . '/packages/lejubila/pidomotichome/src/app/Http/Controllers/RoleCrudController.php',
         'Lejubila\\PiDomoticHome\\app\\Http\\Controllers\\UserCrudController' => __DIR__ . '/../..' . '/packages/lejubila/pidomotichome/src/app/Http/Controllers/UserCrudController.php',
         'Lejubila\\PiDomoticHome\\database\\seeds\\AdminAddToRoleTableSeeder' => __DIR__ . '/../..' . '/packages/lejubila/pidomotichome/src/database/seeds/AdminAddToRoleTableSeeder.php',
         'Lejubila\\PiDomoticHome\\module\\AbstractModule' => __DIR__ . '/../..' . '/packages/lejubila/pidomotichome/src/module/AbstractModule.php',
         'Lejubila\\PiDomoticHome\\module\\AbstractModuleServiceProvider' => __DIR__ . '/../..' . '/packages/lejubila/pidomotichome/src/module/AbstractModuleServiceProvider.php',
+        'Lejubila\\PiDomoticHome\\module\\AbstractSocketClient' => __DIR__ . '/../..' . '/packages/lejubila/pidomotichome/src/module/AbstractSocketClient.php',
         'Lejubila\\PiDomoticHome\\module\\ModuleTraits\\Menu' => __DIR__ . '/../..' . '/packages/lejubila/pidomotichome/src/module/ModuleTraits/Menu.php',
         'Mockery' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegration' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php',

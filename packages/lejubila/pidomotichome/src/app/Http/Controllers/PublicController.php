@@ -2,6 +2,8 @@
 
 namespace Lejubila\PiDomoticHome\app\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use Lejubila\PiDomoticHome\ModuleContainer;
 
 class PublicController extends Controller
@@ -14,6 +16,15 @@ class PublicController extends Controller
     public function __construct()
     {
         //$this->middleware('admin');
+    }
+
+    public function getIndex()
+    {
+        if( Auth::check() ){
+            return Redirect::route('backpack.dashboard');
+        } else {
+            return Redirect::route('pidomotichome.home');
+        }
     }
 
     /**

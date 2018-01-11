@@ -22,6 +22,24 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.8.6] - 2018-01-10
+
+## Fixed
+- ajax datatable loading screen;
+
+
+## [0.8.5] - 2018-01-03
+
+## Added
+- user image to My Account side menu;
+- link on general sidebar user image;
+- link on general sidebar user name;
+
+## Fixed
+- Greek translation;
+- French translation;
+
+
 ## [0.8.4] - 2017-12-12
 
 ## Fixed

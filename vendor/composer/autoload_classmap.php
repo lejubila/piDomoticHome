@@ -7,6 +7,9 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
+    'App\\Events\\ExampleEvent' => $baseDir . '/app/Events/ExampleEvent.php',
+    'App\\Events\\ExamplePrivateEvent' => $baseDir . '/app/Events/ExamplePrivateEvent.php',
+    'App\\Events\\ShippingStatusUpdated' => $baseDir . '/app/Events/ShippingStatusUpdated.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
     'App\\Http\\Controllers\\Auth\\LoginController' => $baseDir . '/app/Http/Controllers/Auth/LoginController.php',
@@ -2127,11 +2130,13 @@ return array(
     'Lejubila\\PiDomoticHome\\app\\Http\\Controllers\\AdminController' => $baseDir . '/packages/lejubila/pidomotichome/src/app/Http/Controllers/AdminController.php',
     'Lejubila\\PiDomoticHome\\app\\Http\\Controllers\\Controller' => $baseDir . '/packages/lejubila/pidomotichome/src/app/Http/Controllers/Controller.php',
     'Lejubila\\PiDomoticHome\\app\\Http\\Controllers\\PermissionCrudController' => $baseDir . '/packages/lejubila/pidomotichome/src/app/Http/Controllers/PermissionCrudController.php',
+    'Lejubila\\PiDomoticHome\\app\\Http\\Controllers\\PublicController' => $baseDir . '/packages/lejubila/pidomotichome/src/app/Http/Controllers/PublicController.php',
     'Lejubila\\PiDomoticHome\\app\\Http\\Controllers\\RoleCrudController' => $baseDir . '/packages/lejubila/pidomotichome/src/app/Http/Controllers/RoleCrudController.php',
     'Lejubila\\PiDomoticHome\\app\\Http\\Controllers\\UserCrudController' => $baseDir . '/packages/lejubila/pidomotichome/src/app/Http/Controllers/UserCrudController.php',
     'Lejubila\\PiDomoticHome\\database\\seeds\\AdminAddToRoleTableSeeder' => $baseDir . '/packages/lejubila/pidomotichome/src/database/seeds/AdminAddToRoleTableSeeder.php',
     'Lejubila\\PiDomoticHome\\module\\AbstractModule' => $baseDir . '/packages/lejubila/pidomotichome/src/module/AbstractModule.php',
     'Lejubila\\PiDomoticHome\\module\\AbstractModuleServiceProvider' => $baseDir . '/packages/lejubila/pidomotichome/src/module/AbstractModuleServiceProvider.php',
+    'Lejubila\\PiDomoticHome\\module\\AbstractSocketClient' => $baseDir . '/packages/lejubila/pidomotichome/src/module/AbstractSocketClient.php',
     'Lejubila\\PiDomoticHome\\module\\ModuleTraits\\Menu' => $baseDir . '/packages/lejubila/pidomotichome/src/module/ModuleTraits/Menu.php',
     'Mockery' => $vendorDir . '/mockery/mockery/library/Mockery.php',
     'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegration' => $vendorDir . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php',
