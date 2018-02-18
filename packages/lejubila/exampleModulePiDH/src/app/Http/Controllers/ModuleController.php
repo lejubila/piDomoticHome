@@ -10,8 +10,8 @@ namespace Lejubila\PiDomoticHome\ExampleModule\app\Http\Controllers;
 
 use App\Events\ExampleEvent;
 use App\Events\ExamplePrivateEvent;
-use App\Events\ShippingStatusUpdated;
-use App\User;
+use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Session;
 use Lejubila\PiDomoticHome\app\Http\Controllers\Controller;
 use Lejubila\PiDomoticHome\ExampleModule\Module;
 
@@ -82,4 +82,23 @@ class ModuleController extends Controller
         // The '/admin' route is not to be used as a page, because it breaks the menu's active state.
         return redirect(config('backpack.base.route_prefix').'/dashboard');
     }
+
+
+    public function postWidgetButtonStartStopOn(Request $request){
+
+        $wid = $request::get('wid', 0);
+        Session::put('wid-'.$wid, 1);
+
+        return redirect()->back();
+    }
+
+    public function postWidgetButtonStartStopOff(Request $request){
+
+        $wid = $request::get('wid', 0);
+        Session::put('wid-'.$wid, 0);
+
+        return redirect()->back();
+    }
+
+
 }

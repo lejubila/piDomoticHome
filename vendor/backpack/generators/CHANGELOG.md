@@ -20,6 +20,20 @@ All Notable changes to `Backpack Generators` will be documented in this file
 - Nothing
 
 
+
+## 1.1.13 - 2018-02-14
+
+### Fixed
+- table now is now pluralized correctly (for English names);
+- crud model is now generated with $table and $fillable uncommented;
+
+
+## 1.1.12 - 2018-02-14
+
+### Deprecated
+- CrudRequest is no longer needed, so generated form requests now extend ```Illuminate\Foundation\Http\FormRequest```;
+
+
 ## 1.1.11 - 2017-08-30
 
 ### Added

@@ -16,4 +16,11 @@ Route::group(
         Route::post('dashboard/'.$this->idModule.'/private-event/{id_user}', 'ModuleController@postDashboardPrivateEvent')
             ->name($this->idModule.'.dashboard.private-event');
 
+
+        Route::post( 'module/'.$this->idModule.'/widget/ButtonStartStop/on', 'ModuleController@postWidgetButtonStartStopOn')
+            ->name( $this->idModule.'.widget.ButtonoStartStop.on');
+
+        Route::post( 'module/'.$this->idModule.'/widget/ButtonStartStop/off', 'ModuleController@postWidgetButtonStartStopOff')
+            ->name( $this->idModule.'.widget.ButtonoStartStop.off');
+
     });

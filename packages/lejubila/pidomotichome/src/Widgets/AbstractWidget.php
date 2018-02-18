@@ -29,4 +29,11 @@ abstract class AbstractWidget extends BaseAbstractWidget
      */
     abstract public static function getDescription(): string;
 
+    /**
+     * Get md5 of class name
+     * @return string
+     */
+    public function getMD5Id() {
+        return md5(get_class($this));
+    }
 }

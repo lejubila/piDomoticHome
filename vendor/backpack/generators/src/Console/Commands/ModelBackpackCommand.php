@@ -2,6 +2,7 @@
 
 namespace Backpack\Generators\Console\Commands;
 
+use Illuminate\Support\Str;
 use Illuminate\Console\GeneratorCommand;
 
 class ModelBackpackCommand extends GeneratorCommand
@@ -70,7 +71,9 @@ class ModelBackpackCommand extends GeneratorCommand
      */
     protected function replaceTable(&$stub, $name)
     {
-        $table = ltrim(strtolower(preg_replace('/[A-Z]/', '_$0', str_replace($this->getNamespace($name).'\\', '', $name))), '_').'s';
+        $name = ltrim(strtolower(preg_replace('/[A-Z]/', '_$0', str_replace($this->getNamespace($name).'\\', '', $name))), '_');
+
+        $table = Str::snake(Str::plural($name));
 
         $stub = str_replace('DummyTable', $table, $stub);
 

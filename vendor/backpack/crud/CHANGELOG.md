@@ -22,6 +22,30 @@ All Notable changes to `Backpack CRUD` will be documented in this file
 -----------
 
 
+## [3.3.9] - 2018-02-14
+
+### Added
+- (Github only) probot auto-replies for first issue, first PR and first PR merged;
+
+## Fixed
+- double-click on create form created two entries; fixes #1229;
+
+### Deprecated
+- CrudRequest; Since it does nothing, CrudController now extends Illuminate\Http\Request instead; merged #1129; fixes #1119;
+
+
+## [3.3.8] - 2018-02-08
+
+## Removed
+- laravelcollective/html dependecy;
+
+
+## [3.3.6] - 2018-01-16
+
+## Fixed
+- base64_image field triggered an error when using the src parameter - merged #1192;
+
+
 ## [3.3.5] - 2018-01-10
 
 ## Added

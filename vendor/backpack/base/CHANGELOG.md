@@ -22,6 +22,31 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## [0.8.9] - 2018-02-08
+
+## Fixed
+- NL translation;
+- ES translation;
+- Security issue #240 - user insert new fields and change restricted info about him;
+
+
+## [0.8.8] - 2018-02-08
+
+## Added
+- Laravel 5.6 support;
+
+
+## [0.8.7] - 2018-01-18
+
+## Added
+- progress bar to installer;
+- debug option to installer;
+- configurable timeout option to installer;
+
+## Fixed
+- hide secondary pace loader to avoid CRUD list page three-separate-loaders syndrome;
+
+
 ## [0.8.6] - 2018-01-10
 
 ## Fixed

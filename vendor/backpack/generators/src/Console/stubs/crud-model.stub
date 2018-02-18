@@ -9,17 +9,17 @@ class DummyClass extends Model
 {
     use CrudTrait;
 
-     /*
+    /*
     |--------------------------------------------------------------------------
     | GLOBAL VARIABLES
     |--------------------------------------------------------------------------
     */
 
-    //protected $table = 'DummyTable';
-    //protected $primaryKey = 'id';
+    protected $table = 'DummyTable';
+    // protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    // protected $fillable = [];
+    protected $fillable = [];
     // protected $hidden = [];
     // protected $dates = [];
 

@@ -18,10 +18,8 @@
 
     <div class="row">
         @widget('ExampleModule.Widgets.DateTime')
-        @widget('ExampleModule.Widgets.DateTime')
-        @widget('ExampleModule.Widgets.DateTime')
-        @widget('ExampleModule.Widgets.DateTime')
-        @widget('ExampleModule.Widgets.DateTime')
+        @widget('ExampleModule.Widgets.ButtonStartStop', ['name' => 'button1'])
+        @widget('ExampleModule.Widgets.ButtonStartStop', ['name' => 'button2'])
     </div>
 
     <div class="row">
